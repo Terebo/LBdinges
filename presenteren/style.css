@@ -1,0 +1,76 @@
+:root {
+	--sans: 'Roboto', sans-serif;
+    --serif: 'Roboto Slab', serif;
+}
+
+body, html {
+	background-color: #4e4e4e;
+	font-family: var(--sans);
+}
+
+.container {
+	background-color: white;
+	-webkit-box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+	width: 90%;
+	margin-left: 5%;
+	height: 75vh;
+	margin-top: 6.25%;
+	display: block;
+	text-align: center;
+	padding-top: 0.1%;
+	overflow-x: scroll;
+}
+
+.serif{
+	font-family: var(--serif);
+}
+
+#sendbutton {
+	background-color: #666ad1;
+	width: auto;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 0.5vh;
+	padding-bottom: 0.2vh;
+	border-bottom: 0.75vh solid #666666;
+	border-radius: 0.3vw 0.3vw 0vh 0vh;
+	display: inline-block;
+	margin-top: 2%;
+	cursor: pointer;
+	transition: border 0.5s;
+	color: white;
+	font-size: 2.5vh;
+}
+
+#sendbutton:hover {
+	border-bottom: 0.75vh solid #689f38;
+}
+
+.selectbutton {
+	background-color: #666ad1;
+	margin-left: 1%;
+	width: 29%;
+	display: inline-block;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 0.5vh;
+	padding-bottom: 0.2vh;
+	text-align: left;
+	border-bottom: 0.75vh solid #666666;
+	border-radius: 0.3vw 0.3vw 0vh 0vh;
+	font-family: var(--sans);
+	color: white;
+	font-size: 4vh;
+	margin-bottom: 1%;
+}
+
+.naam {
+	margin-bottom: -1%;
+	margin-left: 2%;
+	font-size: 2.5vh;
+	font-family: var(--serif);
+	color: #99d066;
+	font-weight: 500;
+}

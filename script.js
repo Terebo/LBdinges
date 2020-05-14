@@ -47,17 +47,16 @@ function start() {
         jsonArr = JSON.parse(xhr.responseText);
 		messages = jsonArr.messages;
 		berichtedit = bericht.value.replace("\n", "<br>")
-        messages.push( {"naam": naam.value, "bericht": bericht.value});
+        messages.push( {"naam": naam.value, "bericht": berichtedit});
 
         xhr.open("POST", jsonRequestURL, true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("jsonTxt="+JSON.stringify(jsonArr));
-		
-		setTimeout(function() {
 		Cookies.set('naam', naam.value);
 		Cookies.set('bericht', berichtedit);
+		setTimeout(function() {
 		console.log(berichtedit);
-		window.location.assign("dankje/");}, 2000)
+		window.location.assign("dankje/");}, 1500)
     }
 	};
 	xhr.send(null);
