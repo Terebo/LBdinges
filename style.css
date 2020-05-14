@@ -1,0 +1,88 @@
+:root {
+	--sans: 'Roboto', sans-serif;
+    --serif: 'Roboto Slab', serif;
+}
+
+body, html {
+	background-color: #4e4e4e;
+	font-family: var(--sans);
+}
+
+.container {
+	background-color: white;
+	-webkit-box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0.0vh 0.0vh 0px rgba(0, 0, 0, 0.25);
+	width: 50%;
+	margin-left: 25%;
+	height: 75vh;
+	margin-top: 6.25%;
+	display: block;
+	text-align: center;
+	padding-top: 0.1%;
+}
+
+.serif{
+	font-family: var(--serif);
+}
+
+#bericht {
+	margin-left: 30%;
+	height: 60%;
+	width: 40%;
+	display: block;
+	margin-top: 2%;
+	background-color: #dbdbdb;
+	border: none;
+	border-bottom: 1vh solid #666666;
+	border-radius: 0.5vw 0.5vw 0vh 0vh;
+	padding-top: 0.4%;
+	padding-left: 0.4%;
+	font-family: var(--sans);
+	transition: border 0.5s;
+	}
+	
+#bericht:focus {
+	border-bottom: 1vh solid #689f38;
+}
+
+#naam {
+	display: block;
+	width: 20%;
+	margin-left: 40%;
+	margin-top: 2%;
+	background-color: #dbdbdb;
+	border: none;
+	border-bottom: 0.5vh solid #666666;
+	border-radius: 0.3vw 0.3vw 0vh 0vh;
+	padding-top: 0.3%;
+	padding-left: 0.3%;
+	font-family: var(--sans);
+	transition: border 0.5s;
+}
+
+#naam:focus {
+	border-bottom: 0.5vh solid #689f38;
+}
+
+#sendbutton {
+	background-color: #666ad1;
+	width: auto;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 0.5vh;
+	padding-bottom: 0.2vh;
+	border-bottom: 0.75vh solid #666666;
+	border-radius: 0.3vw 0.3vw 0vh 0vh;
+	display: inline-block;
+	margin-top: 2%;
+	cursor: pointer;
+	transition: border 0.5s;
+	color: white;
+	font-size: 2.5vh;
+}
+
+#sendbutton:hover {
+	border-bottom: 0.75vh solid #689f38;
+}
+	
