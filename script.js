@@ -1,9 +1,37 @@
 function start() {
-	button = document.getElementById("sendbutton");
-	button.style.borderBottomColor = "#387002";
-	
 	bericht = document.getElementById("bericht");
 	naam = document.getElementById("naam");
+	if (bericht.value === "" && naam.value === "") {
+		bericht.style.borderBottomColor = "#C43D3D";
+		naam.style.borderBottomColor = "#C43D3D";
+		setTimeout( function() {
+		bericht.style.borderBottomColor = "";
+		naam.style.borderBottomColor = "";}, 2000);
+		return;
+	}
+	
+	
+	if (bericht.value === "" && naam.value !== "") {
+		bericht.style.borderBottomColor = "#C43D3D";
+		naam.style.borderBottomColor = "#C43D3D";
+		setTimeout( function() {
+		bericht.style.borderBottomColor = "";
+		naam.style.borderBottomColor = "";}, 2000);
+		return;
+	}
+	
+	if (naam.value === "" && bericht.value !== "") {
+		naam.style.borderBottomColor = "#C43D3D";
+		naam.style.borderBottomColor = "#C43D3D";
+		setTimeout( function() {
+		naam.style.borderBottomColor = "";
+		naam.style.borderBottomColor = "";}, 2000);
+		return;
+	}
+		
+	
+	button = document.getElementById("sendbutton");
+	button.style.borderBottomColor = "#387002";
 	
 	var xhr = new XMLHttpRequest(),
     jsonArr,
@@ -28,7 +56,8 @@ function start() {
 		setTimeout(function() {
 		Cookies.set('naam', naam.value);
 		Cookies.set('bericht', berichtedit);
-		window.location.assign("dankje/");}, 200)
+		console.log(berichtedit);
+		window.location.assign("dankje/");}, 2000)
     }
 	};
 	xhr.send(null);
