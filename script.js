@@ -18,13 +18,20 @@ function start() {
 		console.log(xhr.responseText)
         jsonArr = JSON.parse(xhr.responseText);
 		messages = jsonArr.messages;
+		berichtedit = bericht.value.replace("\n", "<br>")
         messages.push( {"naam": naam.value, "bericht": bericht.value});
 
         xhr.open("POST", jsonRequestURL, true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("jsonTxt="+JSON.stringify(jsonArr));
+		
+		setTimeout(function() {
+		Cookies.set('naam', naam.value);
+		Cookies.set('bericht', berichtedit);
+		window.location.assign("dankje/");}, 200)
     }
 	};
 	xhr.send(null);
 	return;
+	
 }
