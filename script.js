@@ -49,7 +49,7 @@ function start() {
 		berichtedit = bericht.value.replace("\n", "<br>")
         messages.push( {"naam": naam.value, "bericht": berichtedit});
 
-        xhr.open("POST", jsonRequestURL, true);
+        xhr.open("POST", jsonRequestURL, false);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("jsonTxt="+JSON.stringify(jsonArr));
 		Cookies.set('naam', naam.value);
