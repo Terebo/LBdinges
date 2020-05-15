@@ -47,6 +47,10 @@ body, html {
 	border-bottom: 1vh solid #689f38;
 }
 
+p#bericht {
+	overflow-wrap: break-word;
+}
+
 #naam {
 	display: block;
 	width: 20%;

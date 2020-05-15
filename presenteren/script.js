@@ -1,9 +1,20 @@
- window.i = 0;
+ window.i = -1;
+ window.prevhollidays = 0
+var ready = false;
 function start() {
 	var startbutton = document.getElementById("sendbutton");
 	startbutton.parentNode.removeChild(startbutton);
+	var a = $.ajax({
+		url: '../backend/backend.json',
+		type: "GET",
+		dataType: "json",
+		success: function (response) {
+		console.log(response.messages.length, window.i)
+		startdingen();
+		}})	
+}
+function startdingen() {
 	setInterval( function(){
-		console.info("phase 2 started")
 		var fetchedhresponse = window.fetchedhresponse;
 	    var a = $.ajax({
 		url: '../backend/backend.json',
@@ -11,23 +22,23 @@ function start() {
 		dataType: "json",
 		success: function (response) {
 		var Response = response.messages;
-		console.log(Response.length -1);
+		console.log("i: ", window.i, "nu: ", Response.length, "eerder: " , window.prevhollidays)
 		window.hollidaysobj = Response;
-		if (window.i > Response.length - 1) {
-			console.log(("window.responses" + i), typeof(("window.responses" + i)))
-			i--
-			console.log(window.i);
-		}
-		
-		else{
-		window.i++
-		console.log("oen");
+		var diffrence = Response.length - window.prevhollidays;
+		console.log(diffrence);
+		if ((Response.length - window.prevhollidays) === 1 && Response.length !== 0) {
+			window.i++
+			console.log("ninininini!")
 		Response.forEach( function() {
 			eval("window.responses" + window.i + " = " + "Response[" + window.i + "]");
 		})
-		fillcont()}
-		}});console.info("phase 2 finished");
-	window.gatherhollidays = "true";}, 1000);
+		setTimeout( function() {
+		fillcont();}, 1);}
+		console.log("hai")	
+		window.prevhollidays = Response.length
+		
+		
+		}});}, 1000);
 }	
 function fillcont() {
 	var container = document.getElementById("container");
